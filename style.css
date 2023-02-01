@@ -24,18 +24,76 @@ picture {
 }
 
 /* ==================== */
-nav, ul, li, img {
+header, nav, li, img {
     border: 1px red solid;
 
 }
 
 
-#top-nav {
+.header {
     display: flex;
     justify-content: space-between;
     padding: .5rem 2rem;
+    z-index: 999;
+    background-color: white;
+}
+#main-nav {
+    display: flex;
+    align-items: center;
 }
 
-.nav-items {
+.list-items {
     display: flex;
+    gap: 1rem;
+    font-size: 1.125rem;
+}
+
+.dropdown {
+    display: block;
+    z-index: 500;
+    position: absolute;
+    width: 50%;
+    right: 0;
+    background-color: white;
+    top: 4rem;
+    transition: width 500ms ease-in-out, z-index 400ms ease-in-out;
+    overflow: hidden; /* This is what really makes the animation look smooth, by cropping out he inner elements */
+}
+
+.dropdown .list-item{
+    display: flex;
+    justify-content: center;
+    padding: .5rem;
+}
+.dropdown .list-item:hover {
+    background-color: beige;
+}
+
+.hide{
+    z-index: -1;
+    width: 0;
+}
+
+
+.menu-toggle {
+    margin-top: 4px;
+    display: none;
+    cursor: pointer;
+}
+
+.hero-section {
+    height: 100vh;
+    background-color: aqua;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* Sets styling for screens smaller than 780px (Tablets) */
+@media screen and (max-width: 720px) {
+    .menu-toggle {
+        display: block;
+    }
+    
 }
