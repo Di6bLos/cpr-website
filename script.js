@@ -4,7 +4,7 @@ const menuItems = document.querySelector(".list-items");
 const menuIcon = document.querySelector(".menu-icon");
 
 
-
+// Opens and closes the menu, and changes the icon
 menuToggle.addEventListener("click", ()=> {
     menuItems.classList.toggle("hide");
     menuIcon.classList.toggle("open");

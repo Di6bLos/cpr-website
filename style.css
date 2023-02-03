@@ -83,8 +83,8 @@ img {
   display: none;
   border: 2px solid grey;
   padding: 7px 4px;
-  width: 48px;
-  height: 44px;
+  width: 36px;
+  height: 36px;
   border-radius: 5px;
   background: white;
 }
@@ -106,28 +106,49 @@ img {
 }
 
 .menu-icon {
-  top: 12px;
-}
-
-.menu-icon:before {
-  bottom: 12px;
-}
-
-.menu-icon:after {
   top: 8px;
 }
 
+.menu-icon:before {
+  bottom: 8px;
+}
+
+.menu-icon:after {
+  top: 5px;
+}
+/* -- Changes the icon when clicked -- */
 .open {
   background: transparent;
 }
 
 .open:after {
-  transform: rotate(45deg) translate(-7px, -8px);
+  transform: rotate(45deg) translate(-5px, -6px);
 }
 
 .open:before {
-  transform: rotate(-45deg) translate(-9px, 8px);
+  transform: rotate(-45deg) translate(-5px, 6px);
 }
+
+/* ---- Language Toggle -------- */
+
+.lang-btn {
+    color: white;
+    font-weight: 700;
+    background-color: red;
+    padding: 6px;
+    border-radius: 15px;
+    box-shadow: 4px 0px 2px grey;
+}
+
+.lang-toggle {
+    border: 1px solid grey;
+    width: 56px;
+    display: flex;
+    border-radius: 20px;
+    box-shadow: inset 5px 5px 10px lightgray;
+}
+
+
 
 /* ======================== */
 
