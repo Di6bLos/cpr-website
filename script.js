@@ -1,12 +1,13 @@
 // DOM objects
 const menuToggle = document.querySelector(".menu-toggle");
 const menuItems = document.querySelector(".list-items");
-const menuIcon = document.querySelector("#menu_icon-img");
+const menuIcon = document.querySelector(".menu-icon");
 
 
 
 menuToggle.addEventListener("click", ()=> {
     menuItems.classList.toggle("hide");
+    menuIcon.classList.toggle("open");
 })
 // Listens for the window to be resized and the changes the menu style
 window.addEventListener("resize", ()=>{

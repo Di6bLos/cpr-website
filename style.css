@@ -1,99 +1,147 @@
 /* ==== STYLE RESET ==== */
 
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-	text-decoration: none;
-    list-style: none;
-    
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
 }
 html {
-    scroll-behavior: smooth;
-	  height: 100%;
-    overflow: hidden;
+  scroll-behavior: smooth;
+  height: 100%;
+  overflow: hidden;
 }
 body {
-    height: 100%;
-    overflow-y: auto;
-	font-family:'Raleway';
+  height: 100%;
+  overflow-y: auto;
+  font-family: "Raleway";
 }
 img,
 picture {
-    width: 100%; /* Works better when inside a div */
+  width: 100%; /* Works better when inside a div */
 }
 
 /* ==================== */
-header, nav, li, img {
-    border: 1px red solid;
-
+header,
+nav,
+li,
+img {
+  border: 1px red solid;
 }
-
 
 .header {
-    display: flex;
-    justify-content: space-between;
-    padding: .5rem 2rem;
-    z-index: 999;
-    background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 2rem;
+  z-index: 999;
+  background-color: white;
+  position: sticky;
+  top: 0px;
 }
 #main-nav {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .list-items {
-    display: flex;
-    gap: 1rem;
-    font-size: 1.125rem;
+  display: flex;
+  gap: 1rem;
+  font-size: 1.125rem;
 }
 
 .dropdown {
-    display: block;
-    z-index: 500;
-    position: absolute;
-    width: 50%;
-    right: 0;
-    background-color: white;
-    top: 4rem;
-    transition: width 500ms ease-in-out, z-index 400ms ease-in-out;
-    overflow: hidden; /* This is what really makes the animation look smooth, by cropping out he inner elements */
+  display: block;
+  z-index: 500;
+  position: absolute;
+  width: 100%;
+  right: 0;
+  background-color: white;
+  top: 4rem;
+  transition: width 500ms ease-in-out, z-index 400ms ease-in-out;
+  overflow: hidden; /* This is what really makes the animation look smooth, by cropping out he inner elements */
 }
 
-.dropdown .list-item{
-    display: flex;
-    justify-content: center;
-    padding: .5rem;
+.dropdown .list-item {
+  display: flex;
+  justify-content: center;
+  padding: 0.5rem;
 }
 .dropdown .list-item:hover {
-    background-color: beige;
+  background-color: beige;
 }
 
-.hide{
-    z-index: -1;
-    width: 0;
+.hide {
+  z-index: -1;
+  width: 0;
 }
 
+/* ------- Menu Toggle -------- */
 
 .menu-toggle {
-    margin-top: 4px;
     display: none;
-    cursor: pointer;
+  border: 2px solid grey;
+  padding:  8px ;
+  width: 56px;
+  height: 48px;
+  border-radius: 5px;
+  background: white;
 }
+
+.menu-icon:before,
+.menu-icon:after {
+  content: " ";
+}
+.menu-icon,
+.menu-icon:after,
+.menu-icon:before {
+  display: block;
+  width: 100%;
+  height: 4px;
+  background: #5e5e5e;
+  position: relative;
+  border-radius: 8px;
+  transition: all 500ms;
+}
+
+.menu-icon {
+  top: 12px;
+}
+
+.menu-icon:before {
+  bottom: 12px;
+}
+
+.menu-icon:after {
+  top: 8px;
+}
+
+.open {
+  background: transparent;
+}
+
+.open:after {
+  transform: rotate(45deg) translate(-8px, -8px);
+}
+
+.open:before {
+  transform: rotate(-45deg) translate(-10px, 8px);
+}
+
+/* ======================== */
 
 .hero-section {
-    height: 100vh;
-    background-color: aqua;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  height: 100vh;
+  background-color: aqua;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
 
 /* Sets styling for screens smaller than 780px (Tablets) */
 @media screen and (max-width: 720px) {
-    .menu-toggle {
-        display: block;
-    }
-    
+  .menu-toggle {
+    display: block;
+  }
 }
