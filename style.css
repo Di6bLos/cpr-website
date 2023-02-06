@@ -23,12 +23,7 @@ picture {
 }
 
 /* ==================== */
-header,
-nav,
-li,
-img {
-  border: 1px red solid;
-}
+
 
 .header {
   display: flex;
@@ -80,8 +75,8 @@ img {
 /* ------- Menu Toggle -------- */
 
 .menu-toggle {
-  display: none;
-  border: 2px solid grey;
+  display: block;
+  border: 1px solid grey;
   padding: 7px 4px;
   width: 36px;
   height: 36px;
@@ -136,16 +131,18 @@ img {
     font-weight: 700;
     background-color: red;
     padding: 6px;
-    border-radius: 15px;
-    box-shadow: 4px 0px 2px grey;
+    border-radius: 50%;
+    /* box-shadow: 4px 0px 2px grey; */
 }
 
 .lang-toggle {
     border: 1px solid grey;
-    width: 56px;
+    background-color: #f1f1f1;
+    width: 60px;
     display: flex;
-    border-radius: 20px;
-    box-shadow: inset 5px 5px 10px lightgray;
+    justify-content: end;
+    border-radius: 30% / 50%;
+    padding: 1px;
 }
 
 
@@ -161,9 +158,15 @@ img {
 }
 /* =========== Media Queries ========== */
 
-/* Sets styling for screens smaller than 780px (Tablets) */
-@media screen and (max-width: 720px) {
+/* Sets styling for screens larger than 720px (Tablets) */
+@media screen and (min-width: 720px) {
   .menu-toggle {
-    display: block;
+    display: none;
+  }
+  nav {
+    order: 2;
+  }
+  .lang-toggle {
+    order: 3;
   }
 }
