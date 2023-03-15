@@ -42,6 +42,13 @@ window.onload = () => {
     menuItems.classList.remove("dropdown", "hide");
   } else {
     menuItems.classList.add("dropdown", "hide");
+    
+    navLinks.forEach((link) =>
+      link.addEventListener("click", () => {
+        menuItems.classList.add("hide");
+        menuIcon.classList.remove("open");
+      })
+    );
   }
 };
 // Listens for the window to be resized and the changes the menu style
@@ -50,13 +57,8 @@ window.addEventListener("resize", () => {
     menuItems.classList.remove("dropdown", "hide");
   } else {
     menuItems.classList.add("dropdown", "hide");
+
     
-    navLinks.forEach((link) =>
-      link.addEventListener("click", () => {
-        menuItems.classList.add("hide");
-        menuIcon.classList.remove("open");
-      })
-    );
   }
 });
 
