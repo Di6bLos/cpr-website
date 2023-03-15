@@ -4,16 +4,12 @@ const menuItems = document.querySelector(".list-items");
 const menuIcon = document.querySelector(".menu-icon");
 const headerNav = document.querySelector("header");
 const servicesList = document.querySelector(".services-list");
+const contactForm = document.querySelector("#contact-form");
 
 
 // Array of Objects that will carry the Card information
 
 const servicesArr = [
-  {
-    icon: "https://via.placeholder.com/50",
-    title: "BLS / AED",
-    description: " Learn how to save lives in emergency situations with our BLS/AED certification course. This course covers basic life support techniques and AED usage, empowering you to confidently respond to cardiac and respiratory emergencies."
-  },
   {
     icon: "https://via.placeholder.com/50",
     title: "CPR / AED",
@@ -23,7 +19,12 @@ const servicesArr = [
     icon: "https://via.placeholder.com/50",
     title: "Standard First Aid",
     description: "Be prepared to act in any emergency situation with our Standard First Aid certification course. Covering everything from wound care to allergic reactions, this course provides you with the tools and knowledge to respond confidently to any medical emergency."
-  }
+  },
+  {
+    icon: "https://via.placeholder.com/50",
+    title: "BLS / AED",
+    description: " Learn how to save lives in emergency situations with our BLS/AED certification course. This course covers basic life support techniques and AED usage, empowering you to confidently respond to cardiac and respiratory emergencies."
+  },
 ]
 
 // Opens and closes the menu, and changes the icon
@@ -33,7 +34,7 @@ menuToggle.addEventListener("click", ()=> {
 })
 // Changes the menu style from mobile to desktop depending on the screen size
 window.onload = ()=>{
-    if(window.innerWidth > 720) {
+    if(window.innerWidth > 768) {
         menuItems.classList.remove("dropdown", "hide");
     } else {
         menuItems.classList.add("dropdown", "hide");
@@ -41,7 +42,7 @@ window.onload = ()=>{
 }
 // Listens for the window to be resized and the changes the menu style
 window.addEventListener("resize", ()=>{
-    if(window.innerWidth > 720) {
+    if(window.innerWidth > 768) {
         menuItems.classList.remove("dropdown", "hide");
     } else {
         menuItems.classList.add("dropdown", "hide");
@@ -73,3 +74,12 @@ servicesArr.forEach(service => {
   serviceCard.appendChild(serviceDescription );
   servicesList.appendChild(serviceCard);
 })
+
+// Form submission
+
+const formSubmitted = (e) => {
+  e.preventDefault();
+  console.log("Submitted");
+}
+
+contactForm.addEventListener("submit", formSubmitted);
