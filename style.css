@@ -146,7 +146,7 @@ section {
   position: sticky;
   top: 0px; /* Important to keep the nav from sliding up */
 }
-.shadow {
+.drop-shadow {
   box-shadow: 0 10px 12px -6px grey;
 }
 
@@ -309,6 +309,10 @@ section {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.cta-h2 {
+  text-align: center;
 }
 
 /* ========== Instructor Section ============== */

@@ -3,9 +3,11 @@ const menuToggle = document.querySelector(".menu-toggle");
 const mainNav = document.getElementById("main-nav");
 const navLinks = document.querySelectorAll(".nav-link");
 const menuIcon = document.querySelector(".menu-icon");
-const headerNav = document.querySelector("header");
+const header = document.querySelector(".header");
+const sectionOne = document.querySelector("#hero-section")
 const servicesList = document.querySelector(".services-list");
 const contactForm = document.querySelector("#contact-form");
+const servicesTarget = document.getElementById("services-link-target");
 
 // Array of Objects that will carry the Card information
 
@@ -45,6 +47,17 @@ navLinks.forEach(link => link.addEventListener('click', ()=> {
 
 }))
 
+// Adds a drop shadow to header when it reaches a certain point
+const sectionOneObserver = new IntersectionObserver((entries, sectionOneObserver) => {
+  entries.forEach(entry => {
+    if(!entry.isIntersecting) {
+      header.classList.add("drop-shadow");
+    } else header.classList.remove("drop-shadow");
+  })
+}, {rootMargin: "-100px 0px 0px 0px"});
+
+sectionOneObserver.observe(sectionOne);
+
 // Creates a seperate Card for each object in the services Array
 servicesArr.forEach((service) => {
   // Creates the html elements for the card and text
@@ -79,3 +92,5 @@ const formSubmitted = (e) => {
 };
 
 contactForm.addEventListener("submit", formSubmitted);
+
+
