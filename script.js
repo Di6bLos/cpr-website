@@ -1,6 +1,6 @@
 // DOM objects
 const menuToggle = document.querySelector(".menu-toggle");
-const menuItems = document.querySelector(".list-items");
+const mainNav = document.getElementById("main-nav");
 const navLinks = document.querySelectorAll(".nav-link");
 const menuIcon = document.querySelector(".menu-icon");
 const headerNav = document.querySelector("header");
@@ -32,35 +32,18 @@ const servicesArr = [
 
 // Opens and closes the menu, and changes the icon
 menuToggle.addEventListener("click", () => {
-  menuItems.classList.toggle("hide");
+  const visibility = mainNav.getAttribute("data-visible");
+  if(visibility === "false") {
+    mainNav.setAttribute("data-visible", "true");
+  } else  mainNav.setAttribute("data-visible", "false");
   menuIcon.classList.toggle("open");
 });
 
-// Changes the menu style from mobile to desktop depending on the screen size
-window.onload = () => {
-  if (window.innerWidth > 768) {
-    menuItems.classList.remove("dropdown", "hide");
-  } else {
-    menuItems.classList.add("dropdown", "hide");
-    
-    navLinks.forEach((link) =>
-      link.addEventListener("click", () => {
-        menuItems.classList.add("hide");
-        menuIcon.classList.remove("open");
-      })
-    );
-  }
-};
-// Listens for the window to be resized and the changes the menu style
-window.addEventListener("resize", () => {
-  if (window.innerWidth > 768) {
-    menuItems.classList.remove("dropdown", "hide");
-  } else {
-    menuItems.classList.add("dropdown", "hide");
+navLinks.forEach(link => link.addEventListener('click', ()=> {
+  mainNav.setAttribute("data-visible", "false");
+  menuIcon.classList.toggle("open");
 
-    
-  }
-});
+}))
 
 // Creates a seperate Card for each object in the services Array
 servicesArr.forEach((service) => {
