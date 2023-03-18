@@ -1,10 +1,10 @@
 
 :root {
   --primary-color: rgba(245, 14, 2, 1.000);
-  --secondary-color: ;
+  --secondary-color: #C0DFF1;
   --bg-color: #f1f1f1;
   --card-color: #fff;
-  --cta-banner: ;
+  --dark-text: #202020;
 
 }
 
@@ -33,7 +33,7 @@ body {
 }
 img,
 picture {
-  /* width: 100%; Works better when inside a div */
+ /* width: 100%;   Works better when inside a div */
 }
 /* ==== Base styles ==== */
 
@@ -42,7 +42,7 @@ body {
   font-family: "Poppins", Arial, sans-serif;
   font-weight: 400;
   line-height: 1.7;
-  color: #242424;
+  color: var(--dark-text);
 }
 
 p {
@@ -63,9 +63,13 @@ h5 {
 h1 {
   margin-top: 0;
   font-size: 4.209rem;
-  text-align: center;
+  font-size: clamp(3rem, 5vw + 1rem, 5rem);
 }
+h1 {
+  margin-top: 0;
+  /* font-size: 4.209rem; */
 
+}
 h2 {
   font-size: 2.369rem;
 }
@@ -90,7 +94,6 @@ small,
   font-size: 1.6rem;
   font-weight: normal;
   margin-bottom: 2rem;
-  text-align: center;
 }
 
 /* Buttons */
@@ -105,23 +108,12 @@ small,
   border-radius: 4px;
   padding: 1rem 2rem;
   border: none;
+  background-color: var(--primary-color);
+  border-radius: 35px;
+  font-size: 1rem;
   transition: all 0.2s ease-in-out;
 }
 
-.cta-btn {
-  background-color: var(--primary-color);
-  border-radius: 35px;
-}
-
-.primary-btn {
-  background-color: #28a745;
-  color: #fff;
-}
-
-.submit-btn {
-  background-color: #6c757d;
-  color: #fff;
-}
 
 .btn:hover {
   opacity: 0.8;
@@ -247,22 +239,30 @@ section {
 /* ========== Hero Section ============== */
 
 #hero-section {
-  color: #fff;
+  color: #202020;
   height: 100vh;
-  background-image: url("./images/sunset-photo-1.jpg");
+  background-image: url("./images/svg-bg-palm-tree.svg");
   background-position: center;
   background-size: cover;
   padding: 0;
 }
-.hero-overlay {
+.hero-container {
   height: 100%;
   width: 100%;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.4);
-  padding: 20px;
+  padding: 2rem;
+  max-width: 1440px;
+}
+.hero-thumbnail-wrap, .hero-text {
+  margin: 2rem 1rem;
+}
+.hero-thumbnail-wrap {
+  width: clamp(350px, 60vw, 800px);
+}
+.hero-thumbnail-wrap img {
+  width: 100%;
 }
 #services-link-target {
   height: 3rem;
@@ -298,11 +298,11 @@ section {
 /* ========== CTA Banner ============== */
 
 .cta-banner {
-  color: #fff;
+  color: var(--dark-text);
   padding-bottom: 3rem;
-  margin: 2rem 0;
+  margin: 3rem 0 1rem;
   width: 100%;
-  background-color: blue;
+  background-color: #C0DFF1;
 }
 
 .cta-container {
@@ -326,10 +326,10 @@ section {
   margin-top: 2rem;
   flex-direction: row-reverse;
 }
-.instructor-container h3,p {
+/* .instructor-container  h3,p {
   margin: 1rem;
   text-align: center;
-}
+} */
 .instructor-container img {
   max-width: 320px;
 }
@@ -340,8 +340,9 @@ section {
   flex-direction: column;
   width: 100%;
   max-width: 900px;
-  padding: 2rem;
-  border: 1px solid red;
+  padding: 3rem 2rem;
+  border-radius: 15px;
+  background-color: var(--secondary-color);
 }
 .required-input {
   color: red;
@@ -351,6 +352,8 @@ section {
   font-size: 1rem;
   padding: .5rem .25rem .25rem;
   margin-bottom: 1rem;
+  border: 1px solid var(--dark-text);
+  border-radius: 5px;
 }
 .submit-btn {
   margin-top: 1rem;
@@ -358,6 +361,11 @@ section {
   border-radius: 30px;
   align-self: center;
 }
+
+/* =========== Footer Section ========== */
+
+
+
 
 
 
@@ -393,9 +401,11 @@ section {
     clip-path: inset(0);
   }
 
-  .instructor-container {
+  .instructor-container, .hero-container {
     flex-direction: column !important;
   }
-    
+  /* h1 {
+    font-size: 3.052rem;
+  } */
   }
   
